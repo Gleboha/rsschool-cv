@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML, CSS & Git Basics</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Resume</h1>
+        <img src="photo.jpg" class="photo" alt="My photo">
+        <section class="main-info">
+            <p><strong>First Name:</strong> Gleb</p>
+            <p><strong>Last Name:</strong> Gundilovich</p>
+            <p><strong>Sex:</strong> Male</p>
+            <p><strong>Age:</strong> 20</p>
+        </section>
+
+        <section class="contacts">
+            <h2>Contact Info</h2>
+            <p><strong>Telegram:</strong> @gleboha</p>
+            <p><strong>VK:</strong> https://vk.com/id255341470</p>
+            <p><strong>Gmail:</strong> gleb.gundilovich@gmail.com</p>
+        </section>
+
+        <section class="summary">
+            <h2>Summary</h2>
+            <p>I want to improve myself in Frontend development.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Basic JavaScript</li>
+                <li>Knockout JS</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Java</li>
+                <li>PHP</li>
+                <li>Magento 2</li>
+                <li>Python</li>
+                <li>Git</li>
+                <li>MySQL</li>
+            </ul>
+        </section>
+
+        <section class="code-examples">
+            <h2>Code Examples</h2>
+            <code>
+                        <pre>
+                            define([
+            'uiComponent',
+            'ko',
+            'jquery',
+            'Magento_Checkout/js/model/quote',
+
+        ], function (Component, ko, $, quote) {
+            'use strict';
+            return Component.extend({
+
+
+                initialize: function () {
+                    this.additionalField = ko.observable();
+                    this._super();
+                    return this;
+                },
+
+                onSubmit: function() {
+                    quote.shippingAddress().extensionAttributes = {};
+                    quote.shippingAddress().extensionAttributes.additionalField = this.additionalField;
+
+                    $.ajax({
+                        url: '/magento2/rest/V1/test-checkout/post',
+                        type: "POST",
+                        data: ko.toJSON({param: quote.shippingAddress()}),
+                        contentType: "application/json"
+                    });
+
+                    return true;
+                }
+            });
+        });
+
+                        </pre>
+            </code>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <p>I have a little experience in developing modules for Magento 2.2.4. Also I was developing a small online store, it was a project for the university (Backend - PHP, Frontend - HTML, CSS).</p>
+        </section>
+
+        <section class="Education">
+            <h2>Education</h2>
+            <p>Main:</p>
+            <ul class="main-education">
+                <li>Belarusian National Technical University</li>
+            </ul>
+
+            <p>Online:</p>
+            <ul class="online-education">
+                <li>Learn JavaScript</li>
+                <li>HTMLAcademy</li>
+            </ul>
+        </section>
+
+        <section class="english-info">
+            <h2>English</h2>
+            <p>I practice my English by reading technical literature and communicating in English with my friends.</p>
+        </section>
+    </body>
+</html>
