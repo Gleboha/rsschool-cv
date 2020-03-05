@@ -1,0 +1,9 @@
+body {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.photo{
+    width: 200px;
+    height: 200px;
+}
